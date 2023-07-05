@@ -1,4 +1,7 @@
+import Header from '@/components/Header'
 import './globals.css'
+
+import { NextAuthProvider } from '@/providers/auth'
 import { Poppins } from 'next/font/google'
 
 const poppins = Poppins({
@@ -19,7 +22,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br" className={`${poppins.variable}`}>
-      <body>{children}</body>
+      <body>
+        <NextAuthProvider>
+          <Header />
+          {children}
+        </NextAuthProvider>
+      </body>
     </html>
   )
 }

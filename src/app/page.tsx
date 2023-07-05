@@ -1,5 +1,11 @@
-import Header from '@/components/Header'
+import TripSearch from './components/TripSearch'
+import QuickSearch from './components/QuickSearch'
 
 export default function Home() {
-  return <Header />
+	return (
+		<>
+			<TripSearch />
+			<QuickSearch />
+		</>
+	)
 }
