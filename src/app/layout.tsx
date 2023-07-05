@@ -1,11 +1,10 @@
 import './globals.css'
 import { Poppins } from 'next/font/google'
 
-const poppins = Poppins({ 
+const poppins = Poppins({
   subsets: ['latin'],
-  variable:'--font-poppins', 
+  variable: '--font-poppins',
   weight: ['400'],
-  preload: false
 })
 
 export const metadata = {
@@ -15,18 +14,12 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-  session
 }: {
-  children: React.ReactNode,
-  session
+  children: React.ReactNode
 }) {
   return (
-    <html lang="pt-br" className={propins.variable}>
-      <body>
-        <SessionProvider session={session}>
-          {children}
-        </SessionProvider>
-      </body>
+    <html lang="pt-br" className={`${poppins.variable}`}>
+      <body>{children}</body>
     </html>
   )
 }
