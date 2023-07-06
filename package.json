@@ -15,6 +15,7 @@
 		"@types/react": "18.2.14",
 		"@types/react-dom": "18.2.6",
 		"autoprefixer": "10.4.14",
+		"date-fns": "^2.30.0",
 		"eslint": "8.44.0",
 		"eslint-config-next": "13.4.8",
 		"next": "13.4.8",
@@ -34,9 +35,10 @@
 		"@typescript-eslint/eslint-plugin": "^5.61.0",
 		"eslint-config-prettier": "^8.8.0",
 		"prettier": "^2.8.8",
-		"prisma": "^4.16.2"
+		"prisma": "^4.16.2",
+		"ts-node": "^10.9.1"
 	},
 	"prisma": {
-		"seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} --transpile-only prisma/seed.ts"
+		"seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} --transpile-only src/lib/seed.ts"
 	}
 }
