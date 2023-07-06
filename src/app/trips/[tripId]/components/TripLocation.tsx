@@ -7,7 +7,10 @@ interface TripLocationProps {
 	locationDescription: string
 }
 
-const TripLocation = ({ location, locationDescription }: TripLocationProps) => {
+const TripLocation: React.FC<TripLocationProps> = ({
+	location,
+	locationDescription,
+}) => {
 	return (
 		<div className="p-5">
 			<h2 className="font-semibold text-primaryDarker mb-5">Localização</h2>

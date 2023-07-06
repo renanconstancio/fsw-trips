@@ -5,7 +5,7 @@ interface TripHighlightsProps {
 	highlights: string[]
 }
 
-const TripHighlights = ({ highlights }: TripHighlightsProps) => {
+const TripHighlights: React.FC<TripHighlightsProps> = ({ highlights }) => {
 	return (
 		<div className="flex flex-col p-5">
 			<h2 className="font-semibold text-primaryDarker mb-2">Destaques</h2>

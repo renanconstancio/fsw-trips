@@ -19,8 +19,9 @@ const TripSearch = () => {
 				<div className="flex gap-4">
 					<DatePicker
 						placeholderText="Data de Ida"
-						// eslint-disable-next-line @typescript-eslint/no-empty-function
-						onChange={() => {}}
+						onChange={() => {
+							return
+						}}
 						className="w-full"
 					/>
 					<CurrencyInput placeholder="Orçamento" />

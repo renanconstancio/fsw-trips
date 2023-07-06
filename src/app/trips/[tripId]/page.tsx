@@ -1,11 +1,14 @@
 import { prisma } from '@/lib/prisma'
 
-interface TripDetailsProps {
-	tripId: string
-}
+import React from 'react'
+import TripHeader from './components/TripHeader'
+import TripReservation from './components/TripReservation'
+import TripDescription from './components/TripDescription'
+import TripHighlights from './components/TripHighlights'
+import TripLocation from './components/TripLocation'
 
-const getTrip = async (tripId: string) => {
-	const trip = await prisma.trip.findFirst({
+const getTripDetails = async (tripId: string) => {
+	const trip = await prisma.trip.findUnique({
 		where: {
 			id: tripId,
 		},
@@ -14,14 +17,27 @@ const getTrip = async (tripId: string) => {
 	return trip
 }
 
-const TripDetails: React.FC<{ params: TripDetailsProps }> = async ({
-	params,
-}) => {
-	const trip = await getTrip(params.tripId)
-	console.log({ trip })
+const TripDetails = async ({ params }: { params: { tripId: string } }) => {
+	const trip = await getTripDetails(params.tripId)
+
+	if (!trip) return null
+
 	return (
 		<div className="container mx-auto">
-			<div className="relative h-[300px] w-full"></div>
+			<TripHeader trip={trip} />
+			<TripReservation
+				tripId={trip.id}
+				pricePerDay={Number(trip.pricePerDay)}
+				tripStartDate={trip.startDate}
+				tripEndDate={trip.endDate}
+				maxGuests={trip.maxGuests}
+			/>
+			<TripDescription description={trip.description} />
+			<TripHighlights highlights={trip.highlights} />
+			<TripLocation
+				locationDescription={trip.locationDescription}
+				location={trip.location}
+			/>
 		</div>
 	)
 }

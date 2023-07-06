@@ -4,7 +4,7 @@ interface TripDescriptionProps {
 	description: string
 }
 
-const TripDescription = ({ description }: TripDescriptionProps) => {
+const TripDescription: React.FC<TripDescriptionProps> = ({ description }) => {
 	return (
 		<div className="flex flex-col p-5">
 			<h2 className="font-semibold text-primaryDarker">Sobre a viagem</h2>
