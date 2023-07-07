@@ -1,10 +1,10 @@
-'use client'
+"use client"
 
-import Button from '@/components/Button'
-import CurrencyInput from '@/components/CurrencyInput'
-import DatePicker from '@/components/DatePicker'
-import Input from '@/components/Input'
-import React from 'react'
+import Button from "@/components/Button"
+import CurrencyInput from "@/components/CurrencyInput"
+import DatePicker from "@/components/DatePicker"
+import Input from "@/components/Input"
+import React from "react"
 
 const TripSearch = () => {
 	return (

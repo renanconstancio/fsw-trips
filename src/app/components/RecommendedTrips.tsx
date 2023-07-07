@@ -1,7 +1,7 @@
-import TripItem from '@/components/TripItem'
-import { prisma } from '@/lib/prisma'
-import { Trip } from '@prisma/client'
-import React from 'react'
+import TripItem from "@/components/TripItem"
+import { prisma } from "@/lib/prisma"
+import { Trip } from "@prisma/client"
+import React from "react"
 
 const getTrips = async () => {
 	const trips = await prisma.trip.findMany({})

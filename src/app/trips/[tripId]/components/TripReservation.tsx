@@ -1,11 +1,10 @@
-'use client'
+"use client"
 
-import React from 'react'
-import Button from '@/components/Button'
-import DatePicker from '@/components/DatePicker'
-import Input from '@/components/Input'
-import { differenceInDays } from 'date-fns'
-import { Controller, useForm } from 'react-hook-form'
+import Button from "@/components/Button"
+import DatePicker from "@/components/DatePicker"
+import Input from "@/components/Input"
+import { differenceInDays } from "date-fns"
+import { Controller, useForm } from "react-hook-form"
 
 interface TripReservationProps {
 	tripId: string
@@ -37,8 +36,8 @@ const TripReservation: React.FC<TripReservationProps> = ({
 	} = useForm<TripReservationForm>()
 
 	const onSubmit = async (data: TripReservationForm) => {
-		const response = await fetch('http://localhost:3000/api/trips/check', {
-			method: 'POST',
+		const response = await fetch("http://localhost:3000/api/trips/check", {
+			method: "POST",
 			body: Buffer.from(
 				JSON.stringify({
 					startDate: data.startDate,
@@ -53,8 +52,8 @@ const TripReservation: React.FC<TripReservationProps> = ({
 		console.log({ res })
 	}
 
-	const startDate = watch('startDate')
-	const endDate = watch('endDate')
+	const startDate = watch("startDate")
+	const endDate = watch("endDate")
 
 	return (
 		<div className="flex flex-col px-5">
@@ -64,7 +63,7 @@ const TripReservation: React.FC<TripReservationProps> = ({
 					rules={{
 						required: {
 							value: true,
-							message: 'Data inicial é obrigatória.',
+							message: "Data inicial é obrigatória.",
 						},
 					}}
 					control={control}
@@ -86,7 +85,7 @@ const TripReservation: React.FC<TripReservationProps> = ({
 					rules={{
 						required: {
 							value: true,
-							message: 'Data final é obrigatória.',
+							message: "Data final é obrigatória.",
 						},
 					}}
 					control={control}
@@ -106,10 +105,10 @@ const TripReservation: React.FC<TripReservationProps> = ({
 			</div>
 
 			<Input
-				{...register('guests', {
+				{...register("guests", {
 					required: {
 						value: true,
-						message: 'Número de hóspedes é obrigatório.',
+						message: "Número de hóspedes é obrigatório.",
 					},
 				})}
 				placeholder={`Número de hóspedes (max: ${maxGuests})`}
@@ -123,7 +122,7 @@ const TripReservation: React.FC<TripReservationProps> = ({
 				<p className="font-medium text-sm text-primaryDarker">
 					{startDate && endDate
 						? `R$${differenceInDays(endDate, startDate) * pricePerDay}` ?? 1
-						: 'R$0'}
+						: "R$0"}
 				</p>
 			</div>
 

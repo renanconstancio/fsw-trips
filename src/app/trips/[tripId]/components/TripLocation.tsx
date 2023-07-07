@@ -1,6 +1,5 @@
-import Button from '@/components/Button'
-import Image from 'next/image'
-import React from 'react'
+import Button from "@/components/Button"
+import Image from "next/image"
 
 interface TripLocationProps {
 	location: string
@@ -20,7 +19,7 @@ const TripLocation: React.FC<TripLocationProps> = ({
 					alt={location}
 					fill
 					style={{
-						objectFit: 'cover',
+						objectFit: "cover",
 					}}
 					className="rounded-lg shadow-md"
 				/>

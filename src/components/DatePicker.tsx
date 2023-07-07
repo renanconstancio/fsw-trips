@@ -25,6 +25,7 @@ function DatePicker({ className, error, errorMessage, ...props }: InputProps) {
 		<div className="flex w-full flex-col">
 			<_DatePicker
 				locale="pt-BR"
+				dateFormat="dd/MM/yyyy"
 				wrapperClassName="w-full"
 				className={datePickerClassName}
 				enableTabLoop={false}

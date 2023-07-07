@@ -1,7 +1,6 @@
-import React from 'react'
-import ReactCountryFlag from 'react-country-flag'
-import Image from 'next/image'
-import { Trip } from '@prisma/client'
+import ReactCountryFlag from "react-country-flag"
+import Image from "next/image"
+import { Trip } from "@prisma/client"
 
 interface TripHeaderProps {
 	trip: Trip
@@ -15,7 +14,7 @@ const TripHeader: React.FC<TripHeaderProps> = ({ trip }) => {
 					src={trip.coverImage}
 					fill
 					style={{
-						objectFit: 'cover',
+						objectFit: "cover",
 					}}
 					alt={trip.name}
 				/>
@@ -35,7 +34,7 @@ const TripHeader: React.FC<TripHeaderProps> = ({ trip }) => {
 				<p className="text-xs text-grayPrimary">
 					<span className="text-primary font-medium">
 						R${trip.pricePerDay.toString()}
-					</span>{' '}
+					</span>{" "}
 					por dia
 				</p>
 			</div>

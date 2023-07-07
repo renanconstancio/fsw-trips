@@ -1,12 +1,13 @@
-'use client'
+"use client"
 
-import React from 'react'
-import Image from 'next/image'
-import { signIn, signOut, useSession } from 'next-auth/react'
-import { AiOutlineMenu } from 'react-icons/ai'
+import Image from "next/image"
+import { signIn, signOut, useSession } from "next-auth/react"
+import { AiOutlineMenu } from "react-icons/ai"
+import { useState } from "react"
+import Link from "next/link"
 
 const Header = () => {
-	const [menuIsOpen, setMenuIsOpen] = React.useState(false)
+	const [menuIsOpen, setMenuIsOpen] = useState(false)
 
 	const { status, data } = useSession()
 
@@ -21,11 +22,11 @@ const Header = () => {
 
 	return (
 		<div className="container mx-auto p-5 py-0 h-[93px] flex justify-between items-center">
-			<div className="relative h-[32px] w-[182px]">
+			<Link href="/" className="relative h-[32px] w-[182px]">
 				<Image src="/logo.png" alt="Full Stack Week" fill />
-			</div>
+			</Link>
 
-			{status === 'unauthenticated' && (
+			{status === "unauthenticated" && (
 				<button
 					className="text-primary text-sm font-semibold"
 					onClick={handleLoginClick}
@@ -34,7 +35,7 @@ const Header = () => {
 				</button>
 			)}
 
-			{status === 'authenticated' && data.user && (
+			{status === "authenticated" && data.user && (
 				<div className="flex items-center gap-3 border-grayLighter border border-solid rounded-full p-2 px-3 relative">
 					<AiOutlineMenu
 						size={16}

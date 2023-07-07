@@ -1,8 +1,8 @@
-import { Trip } from '@prisma/client'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import ReactCountryFlag from 'react-country-flag'
+import { Trip } from "@prisma/client"
+import Image from "next/image"
+import Link from "next/link"
+
+import ReactCountryFlag from "react-country-flag"
 
 interface TripItemProps {
 	trip: Trip
@@ -16,7 +16,7 @@ const TripItem: React.FC<TripItemProps> = ({ trip }) => {
 					src={trip.coverImage}
 					className="rounded-lg shadow-md"
 					style={{
-						objectFit: 'cover',
+						objectFit: "cover",
 					}}
 					fill
 					alt={trip.name}
@@ -34,7 +34,7 @@ const TripItem: React.FC<TripItemProps> = ({ trip }) => {
 			<p className="text-xs text-grayPrimary">
 				<span className="text-primary font-medium">
 					R${trip.pricePerDay.toString()}
-				</span>{' '}
+				</span>{" "}
 				por dia
 			</p>
 		</Link>
